@@ -1,9 +1,11 @@
 
 
 export async function load() {
-    const versicles = await fetch("http://127.0.0.1:8000/versicle/2");
+    const versicles_server = await fetch("http://127.0.0.1:8000/chapter/1/1");
 
-    const versicle = await versicles.json();
+    const versicles = await versicles_server.json();
 
-    return versicle ;
+    console.log(versicles[0].books);
+
+    return { versicles } ;
 }
